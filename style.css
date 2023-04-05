@@ -1,0 +1,20 @@
+body{
+    background-color: rgba(0, 0, 255, 0.199);
+}
+
+#container1{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 4%;
+
+}
+#searchbox{
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;   
+}
+li{
+    list-style: none;
+
+}
