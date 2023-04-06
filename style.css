@@ -6,8 +6,12 @@ body{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    gap: 4%;
+    gap: 3%;
 
+}
+.form-holder{
+    display: flex;
+    justify-content: space-around;
 }
 #searchbox{
     display: flex;
@@ -17,4 +21,7 @@ body{
 li{
     list-style: none;
 
+}
+img{
+    padding-left: 20px;
 }

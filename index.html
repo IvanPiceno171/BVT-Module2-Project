@@ -10,10 +10,18 @@
 </head>
 <body>
     <h1 style="text-align: center;">Pokemon</h1>
-    <div id="searchbox">
-        <label for="">search for pokemon</label>
-        <input type="text">
+    
+    <div class="form-holder">
+        <form id="searchbox">
+            <label for="">search for pokemon</label>
+            <input class = "inputText"type="text">
+            <button type="submit">Submit</button>
+        </form>
+        <form style="margin-left: 500px;"action="">
+            <button style =" width: 100px; height: 100px; background-color: red; color: white; font-weight: bolder;"type="submit">Click me to Reset</button>
+        </form>
     </div>
+
     <div id="container1" class="pokemon"></div>
 </body>
 </html>
