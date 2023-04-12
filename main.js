@@ -26,6 +26,7 @@
 
 
 const contain = document.getElementById('container1')
+
 const fetchPoke = async () => {
     let x = 0
     const allPokemon = []
@@ -34,7 +35,7 @@ const fetchPoke = async () => {
         try {
             const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${x}`);
             const data = await response.json();
-
+                // console.log(data)
             const pokemon = {}; //empty object 
 
             // creates object for every iteration
@@ -52,7 +53,9 @@ const fetchPoke = async () => {
     displayPoke(allPokemon);
 }
 
-fetchPoke();
+setTimeout(()=>{   
+    fetchPoke();
+},10)
 
 
 function displayPoke(pokemon) {
@@ -70,14 +73,18 @@ function displayPoke(pokemon) {
     contain.innerHTML = allPoke;
 
     const searchBar = document.getElementById('searchbox');
+
     searchBar.addEventListener('submit', (e) => {
         e.preventDefault();
         let inputbox = document.querySelector('.inputText').value
+
+        let pokemonHTML = '';
+
     for (x of pokemon) {
         //   search bar
-            if (inputbox === x.name) {
+            if (inputbox.toLowerCase() === x.name.toLowerCase()) {
                 // console.log('match')
-                return contain.innerHTML = `
+                pokemonHTML = `
                 <div class = "individual-pokemon"> 
                <li class="card">
                <img class="card-image" src="${x.image}"/>
@@ -85,9 +92,16 @@ function displayPoke(pokemon) {
                 </li>
                 </div>`
             }
-        }
-        if(inputbox !== x.name){
-            alert('no such pokemon found')
+            else if (x.name.toLowerCase().includes(inputbox.toLowerCase())) {
+                pokemonHTML += `<div class = "individual-pokemon"> 
+                <li class="card">
+                <img class="card-image" src="${x.image}"/>
+                <h2 class="card-title">${x.id}. ${x.name}</h2>
+                 </li>
+                 </div>`;
+              }
+            
+            contain.innerHTML = pokemonHTML
         }
 
         })

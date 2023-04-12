@@ -9,6 +9,8 @@ body{
     gap: 3%;
 
 }
+
+
 .form-holder{
     display: flex;
     justify-content: space-around;
@@ -24,4 +26,7 @@ li{
 }
 img{
     padding-left: 20px;
+}
+img:hover{
+    transform: scale(1.5);
 }
