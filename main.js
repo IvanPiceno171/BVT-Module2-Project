@@ -7,21 +7,21 @@ let day = date.getDate()
 
 
 let timerContainer = document.querySelector(".clock-div");
-let yearLi = document.createElement('div')
-let monthdiv = document.createElement('div')
-let dayLi = document.createElement('div')
-yearLi.innerText =year
-monthdiv.innerText = month
-dayLi.innerText = day
+let yearDiv = document.createElement('div')
+let monthDiv = document.createElement('div')
+let dayDiv = document.createElement('div')
+yearDiv.innerText =year
+monthDiv.innerText = month
+dayDiv.innerText = day
 if(month === 3){
-    monthdiv.innerText = "April "
+    monthDiv.innerText = "April "
 }
 if(month === 4){
-    monthdiv.innerText = "May"
+    monthDiv.innerText = "May"
 }
-timerContainer.append(monthdiv)
-timerContainer.append(dayLi)
-timerContainer.append(yearLi)
+timerContainer.append(monthDiv)
+timerContainer.append(dayDiv)
+timerContainer.append(yearDiv)
 
 
 
