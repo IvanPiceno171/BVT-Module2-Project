@@ -1,30 +1,33 @@
-// function fetchPoke() {
+// timer
 
-//     // let promise1 =  fetch('https://pokeapi.co/api/v2/pokemon/'+poke)
-
-//     let x = 1
-//     while(x<=151){
-//         x++;
-//         let promise1 =  fetch(`https://pokeapi.co/api/v2/pokemon/${x}`)
-
-//         promise1.then((response)=>{
-//             return response.json();
-//         }).then((data)=>{
-//             const pokemon = {};
-//         pokemon['name'] = data.name;
-//         pokemon['id'] = data.id;
-//         pokemon['image'] = data.sprites['front_shiny']
-//         console.log(pokemon)
-//     }).catch((error)=>{
-//         console.log('Error:')
-
-//     })
-// }
-//   }
-
-// fetchPoke()
+const date = new Date()
+let year = date.getFullYear()
+let month = date.getMonth()
+let day = date.getDate()
 
 
+let timerContainer = document.querySelector(".clock-div");
+let yearDiv = document.createElement('div')
+let monthDiv = document.createElement('div')
+let dayDiv = document.createElement('div')
+yearDiv.innerText =year
+monthDiv.innerText = month
+dayDiv.innerText = day
+if(month === 3){
+    monthDiv.innerText = "April "
+}
+if(month === 4){
+    monthDiv.innerText = "May"
+}
+timerContainer.append(monthDiv)
+timerContainer.append(dayDiv)
+timerContainer.append(yearDiv)
+
+
+
+
+
+// Pokemon rendered
 const contain = document.getElementById('container1')
 
 const fetchPoke = async () => {
@@ -52,10 +55,7 @@ const fetchPoke = async () => {
     }
     displayPoke(allPokemon);
 }
-
-setTimeout(()=>{   
-    fetchPoke();
-},10)
+fetchPoke();
 
 
 function displayPoke(pokemon) {
