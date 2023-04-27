@@ -30,3 +30,9 @@ img{
 img:hover{
     transform: scale(1.5);
 }
+
+.clock-div{
+    display: flex;
+    justify-content: space-around;
+    max-width: 100px;
+}
