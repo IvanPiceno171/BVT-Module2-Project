@@ -10,13 +10,13 @@ let timerContainer = document.querySelector(".clock-div");
 let yearDiv = document.createElement('div')
 let monthDiv = document.createElement('div')
 let dayDiv = document.createElement('div')
-yearDiv.innerText =year
+yearDiv.innerText = year
 monthDiv.innerText = month
 dayDiv.innerText = day
-if(month === 3){
+if (month === 3) {
     monthDiv.innerText = "April "
 }
-if(month === 4){
+if (month === 4) {
     monthDiv.innerText = "May"
 }
 timerContainer.append(monthDiv)
@@ -24,11 +24,8 @@ timerContainer.append(dayDiv)
 timerContainer.append(yearDiv)
 
 
-
-
-
 // Pokemon rendered
-const contain = document.getElementById('container1')
+const pokeContainer = document.getElementById('container1')
 
 const fetchPoke = async () => {
     let x = 0
@@ -38,11 +35,11 @@ const fetchPoke = async () => {
         try {
             const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${x}`);
             const data = await response.json();
-                // console.log(data)
+
             const pokemon = {}; //empty object 
 
-            // creates object for every iteration
 
+            // creates object for every iteration
             pokemon.name = data.name; // pokemon['name'] = data.name;
             pokemon['id'] = data.id;
             pokemon['image'] = data.sprites['front_default']
@@ -70,7 +67,7 @@ function displayPoke(pokemon) {
         </div>
         `
     }).join('')
-    contain.innerHTML = allPoke;
+    pokeContainer.innerHTML = allPoke;
 
     const searchBar = document.getElementById('searchbox');
 
@@ -80,37 +77,25 @@ function displayPoke(pokemon) {
 
         let pokemonHTML = '';
 
-    for (x of pokemon) {
-        //   search bar
-            if (inputbox.toLowerCase() === x.name.toLowerCase()) {
-                // console.log('match')
-                pokemonHTML = `
-                <div class = "individual-pokemon"> 
-               <li class="card">
-               <img class="card-image" src="${x.image}"/>
-               <h2 class="card-title">${x.id}. ${x.name}</h2>
-                </li>
-                </div>`
-            }
-            else if (x.name.toLowerCase().includes(inputbox.toLowerCase())) {
+        for (x of pokemon) {
+            //   search bar
+
+            if (x.name.toLowerCase().includes(inputbox.toLowerCase())) {
                 pokemonHTML += `<div class = "individual-pokemon"> 
                 <li class="card">
                 <img class="card-image" src="${x.image}"/>
                 <h2 class="card-title">${x.id}. ${x.name}</h2>
                  </li>
                  </div>`;
-              }
-            
-            contain.innerHTML = pokemonHTML
+            }
+
+            pokeContainer.innerHTML = pokemonHTML
         }
 
-        })
+    })
 
 
-        // Reset button to reset all pokemon
-
-
-    }
+}
 
 
 
