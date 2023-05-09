@@ -38,13 +38,11 @@ const fetchPoke = async () => {
 
             const pokemon = {}; //empty object 
 
-
-            // creates object for every iteration
-            pokemon.name = data.name; // pokemon['name'] = data.name;
+            pokemon.name = data.name; 
             pokemon['id'] = data.id;
             pokemon['image'] = data.sprites['front_default']
 
-            allPokemon.push(pokemon) // pushes each obj into array
+            allPokemon.push(pokemon) 
 
         } catch (error) {
             console.error(error)
@@ -56,7 +54,6 @@ fetchPoke();
 
 
 function displayPoke(pokemon) {
-
     const allPoke = pokemon.map((poke) => {
         return `
         <div class = "individual-pokemon"> 
@@ -70,16 +67,13 @@ function displayPoke(pokemon) {
     pokeContainer.innerHTML = allPoke;
 
     const searchBar = document.getElementById('searchbox');
-
     searchBar.addEventListener('submit', (e) => {
         e.preventDefault();
         let inputbox = document.querySelector('.inputText').value
 
         let pokemonHTML = '';
-
         for (x of pokemon) {
             //   search bar
-
             if (x.name.toLowerCase().includes(inputbox.toLowerCase())) {
                 pokemonHTML += `<div class = "individual-pokemon"> 
                 <li class="card">
@@ -88,7 +82,6 @@ function displayPoke(pokemon) {
                  </li>
                  </div>`;
             }
-
             pokeContainer.innerHTML = pokemonHTML
         }
 
