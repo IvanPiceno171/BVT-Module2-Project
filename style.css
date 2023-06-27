@@ -1,5 +1,6 @@
 body{
     background-color: rgba(0, 0, 255, 0.199);
+    position: relative;
 }
 
 #container1{
@@ -28,11 +29,22 @@ img{
     padding-left: 20px;
 }
 img:hover{
-    transform: scale(1.5);
+    /* transform: scale(1.5); */
 }
 
 .clock-div{
     display: flex;
     justify-content: space-around;
     max-width: 100px;
+}
+
+#sideContainer{
+    width: 300px;
+    height: 500px;
+    background-color: red;
+    display: none;
+    position: absolute;
+    top: .5%;
+    left: -.7%;
+    color: white;
 }
