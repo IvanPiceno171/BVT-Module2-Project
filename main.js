@@ -5,7 +5,7 @@
 // timer
 const date = new Date()
 let year = date.getFullYear()
-let month = date.getMonth()
+let month = date.getMonth() + 1
 let day = date.getDate()
 
 
@@ -16,15 +16,47 @@ let dayDiv = document.createElement('div')
 yearDiv.innerText = year
 monthDiv.innerText = month
 dayDiv.innerText = day
-//
-//  MAKE THIS INTO
-// A SWITCH STATEMENT
-if (month === 3) {
-    monthDiv.innerText = "April "
+
+switch (month) {
+    case 1:
+        monthDiv.innerText = "January"
+        break
+    case 2:
+        monthDiv.innerText = "Febuary"
+        break
+    case 3:
+        monthDiv.innerText = "March"
+        break
+    case 4:
+        monthDiv.innerText = "April"
+        break
+    case 5:
+        monthDiv.innerText = "May"
+        break
+    case 6:
+        monthDiv.innerText = "June"
+        break
+    case 7:
+        monthDiv.innerText = "July"
+        break
+    case 8:
+        monthDiv.innerText = "August"
+        break
+    case 9:
+        monthDiv.innerText = "September"
+        break
+    case 10:
+        monthDiv.innerText = "October"
+        break
+    case 11:
+        monthDiv.innerText = "November"
+        break
+    case 12:
+        monthDiv.innerText = "December"
+        break
+
 }
-if (month === 4) {
-    monthDiv.innerText = "May"
-}
+
 timerContainer.append(monthDiv)
 timerContainer.append(dayDiv)
 timerContainer.append(yearDiv)
@@ -32,7 +64,6 @@ timerContainer.append(yearDiv)
 
 // Pokemon rendered
 const pokeContainer = document.getElementById('container1')
-
 const fetchPoke = async () => {
     let x = 0
     const allPokemon = []
@@ -44,11 +75,11 @@ const fetchPoke = async () => {
 
             const pokemon = {}; //empty object 
 
-            pokemon.name = data.name; 
+            pokemon.name = data.name;
             pokemon['id'] = data.id;
             pokemon['image'] = data.sprites['front_default']
 
-            allPokemon.push(pokemon) 
+            allPokemon.push(pokemon)
 
         } catch (error) {
             console.error(error)
@@ -59,8 +90,6 @@ const fetchPoke = async () => {
 fetchPoke();
 
 // FUNCTION TO ADD to localStorage
-
-
 function displayPoke(pokemon) {
     const allPoke = pokemon.map((poke, index) => {
         return `
@@ -74,21 +103,24 @@ function displayPoke(pokemon) {
         `
     }).join('')
     pokeContainer.innerHTML = allPoke;
-    
 
-     
     const addButton = document.querySelectorAll('.addButton'); //grabs all buttons NodeList
-    addButton.forEach((button)=>{
-        button.addEventListener('click', (e)=>{
+    addButton.forEach((button) => {
+        button.addEventListener('click', (e) => {
             // const pokeindex = e.target.dataset.index; //dataset is grabs data-index value
             const toPokedex = e.target.name
+            console.log(pokedexImage)
             let caughtArray = localStorage.getItem("caught");
-      caughtArray = caughtArray ? JSON.parse(caughtArray) : []; // Retrieve stored array or initialize as empty if none exists
-      caughtArray.push(toPokedex); // Add the caught Pokemon to the array
+            caughtArray = caughtArray ? JSON.parse(caughtArray) : []; // Retrieve stored array or initialize as empty if none exists
 
-      localStorage.setItem("caught", JSON.stringify(caughtArray)); // Store the updated array in localStorage
+            if (!caughtArray.includes(toPokedex)) {
 
-      console.log(caughtArray);
+                caughtArray.push(toPokedex); // Add the caught Pokemon to the array
+            }
+
+            localStorage.setItem("caught", JSON.stringify(caughtArray)); // Store the updated array in localStorage
+            console.log(caughtArray);
+            // return caughtArray
         })
     });
 
@@ -97,7 +129,6 @@ function displayPoke(pokemon) {
     searchBar.addEventListener('submit', (e) => {
         e.preventDefault();
         let inputbox = document.querySelector('.inputText').value
-        
         let pokemonHTML = '';
         for (x of pokemon) {
             //   search bar
@@ -112,13 +143,19 @@ function displayPoke(pokemon) {
             }
             pokeContainer.innerHTML = pokemonHTML
         }
-        
-    })
-    
 
-    
+    })
 }
 
-
-
-
+const sideBar = document.getElementById('side-bar-pokemon')
+sideBar.addEventListener('click', () => {
+    document.getElementById('sideContainer').style.display = 'block';
+    const caughtArray = JSON.parse(localStorage.getItem('caught')); // Retrieve the array from local storage
+    const sidebarList = document.getElementById('sideContainer'); // Assuming there is an element with the ID "sideContainer" to contain the list
+    sidebarList.innerHTML = ''; // clears the previous content
+    caughtArray.forEach(pokemonName => {
+        const listItem = document.createElement('li');
+        listItem.textContent = pokemonName;
+        sidebarList.appendChild(listItem);
+    });
+})
