@@ -1,6 +1,26 @@
 import React from 'react'
 
 export default function PokeCards({pokemon}) {
+    // const addButton = document.querySelectorAll('.addButton'); //grabs all buttons NodeList
+    // addButton.forEach((button) => {
+    //     button.addEventListener('click', (e) => {
+    //         // const pokeindex = e.target.dataset.index; //dataset is grabs data-index value
+    //         const toPokedex = e.target.name
+
+    //         let caughtArray = localStorage.getItem("caught");
+            
+    //   caughtArray = caughtArray ? JSON.parse(caughtArray) : []; // Retrieve stored array or initialize as empty if none exists
+
+    //         if (!caughtArray.includes(toPokedex)) {
+
+    //             caughtArray.push(toPokedex); // Add the caught Pokemon to the array
+    //         }
+
+    //         localStorage.setItem("caught", JSON.stringify(caughtArray)); // Store the updated array in localStorage
+    //         console.log(caughtArray);
+    //         // return caughtArray
+    //     })
+    // });
 
 
   return (
