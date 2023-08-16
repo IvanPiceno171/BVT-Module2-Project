@@ -113,7 +113,6 @@ function displayPoke(pokemon) {
             let caughtArray = localStorage.getItem("caught");
             
       caughtArray = caughtArray ? JSON.parse(caughtArray) : []; // Retrieve stored array or initialize as empty if none exists
-      caughtArray.push(toPokedex); // Add the caught Pokemon to the array
 
             if (!caughtArray.includes(toPokedex)) {
 
