@@ -28,9 +28,6 @@ li{
 img{
     padding-left: 20px;
 }
-img:hover{
-    /* transform: scale(1.5); */
-}
 
 .clock-div{
     display: flex;
