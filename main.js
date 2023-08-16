@@ -82,7 +82,9 @@ function displayPoke(pokemon) {
         button.addEventListener('click', (e)=>{
             // const pokeindex = e.target.dataset.index; //dataset is grabs data-index value
             const toPokedex = e.target.name
+
             let caughtArray = localStorage.getItem("caught");
+            
       caughtArray = caughtArray ? JSON.parse(caughtArray) : []; // Retrieve stored array or initialize as empty if none exists
       caughtArray.push(toPokedex); // Add the caught Pokemon to the array
 
