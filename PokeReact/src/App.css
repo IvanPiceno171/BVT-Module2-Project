@@ -11,6 +11,9 @@ body{
 
 }
 
+.card{
+  border: 2px solid black;
+}
 
 .form-holder{
   display: flex;
