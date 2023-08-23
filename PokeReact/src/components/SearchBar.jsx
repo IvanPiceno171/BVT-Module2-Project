@@ -5,9 +5,10 @@ export default function SearchBar() {
     <div>
         <div className="form-holder">
         <form id="searchbox">
-            <label for="">search for pokemon</label>
+            <label htmlFor="">Search for Pokemon</label>
             <input className = "inputText" type="text"/>
-            <button type="submit" id="form-button">Submit</button>
+            <button className='search-btn' type="submit" id="form-button">
+            Search</button>
         </form>
             {/* <button id="side-bar-pokemon">see collected pokemon</button>         */}
     </div>

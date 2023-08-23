@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Roboto:wght@400;700&family=Ubuntu&display=swap');
+*{
+  font-family: 'Inter';
+}
 body{
   background-color: rgba(0, 0, 255, 0.199);
   position: relative;
@@ -44,4 +48,20 @@ img{
   top: .5%;
   left: -.7%;
   color: white;
+  
+}
+
+button{
+  padding: 0.5rem 1rem;
+  background-color: #A020F0;
+  color: white;
+  border-radius: 0.2rem;
+  border: none;
+}
+
+button:hover{
+  background-color:rgba(0, 0, 255, 0.199);
+}
+.search-btn{
+  background-color: #51087e;
 }
