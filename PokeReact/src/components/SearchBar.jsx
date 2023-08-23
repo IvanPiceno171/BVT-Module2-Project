@@ -51,7 +51,7 @@ export default function SearchBar() {
     <div>
         <div className="form-holder">
         <form id="searchbox">
-            <label for="">search for pokemon</label>
+            <label htmlFor="">search for Pokemon</label>
             <input className = "inputText" type="text"/>
             <button type="submit" id="form-button">Submit</button>
         </form>
