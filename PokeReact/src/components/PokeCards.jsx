@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function PokeCards({pokemon}) {
+export default function PokeCards({pokemon, clickToAdd, isAdding}) {
     // const addButton = document.querySelectorAll('.addButton'); //grabs all buttons NodeList
     // addButton.forEach((button) => {
     //     button.addEventListener('click', (e) => {
@@ -31,7 +31,7 @@ export default function PokeCards({pokemon}) {
         <h2 className="card-title">{pokemon.id}. {pokemon.name}</h2>
         <p className="card-subtitle">Type: {pokemon.types.map((type) => type.type.name).join(', ')}</p>
         <p className="card-subtitle">Abilities: {pokemon.abilities.map((ability) => ability.ability.name).join(', ')}</p>
-        <button className="addButton" >
+        <button className="addButton" onClick={()=>clickToAdd(pokemon)}>
         {/* <button className="addButton"  onClick={addToPokedex}> */}
           Add to Pokedex
         </button>

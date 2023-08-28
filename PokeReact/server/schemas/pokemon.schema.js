@@ -10,6 +10,6 @@ const pokemonSchema = new mongoose.Schema({
     // stats:[{type: mongoose.SchemaTypes.Mixed, required: true}]
 })
 
-const PokemonModel = mongoose.model('Pokemon', pokemonSchema);
+const PokemonModel = mongoose.model('PokemonModel', pokemonSchema);
 
 export default PokemonModel
