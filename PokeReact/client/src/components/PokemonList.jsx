@@ -3,8 +3,6 @@ import { useQuery } from "react-query";
 import PokeCards from "./PokeCards";
 
 export default function PokemonList() {
-  const [isAdding, setIsAdding] = useState(false);
-  const [pokemonData, setPokemonData] = useState({ name: '', type: '' });
 
   const fetchPokemon = async (x) => {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${x}`);
@@ -57,7 +55,6 @@ export default function PokemonList() {
   };
 
   const clickToAdd = async (pokemon) => {
-    setIsAdding(true);
 
     try {
       await addPokemonToPokedex(pokemon);
@@ -66,7 +63,6 @@ export default function PokemonList() {
     }
 
 
-    setIsAdding(false);
   };
 
   if (isLoading) {
@@ -86,7 +82,6 @@ export default function PokemonList() {
             key={pokemon.id}
             pokemon={pokemon}
             clickToAdd={clickToAdd}
-            isAdding={isAdding}
           />
         ))}
       </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function PokeCards({pokemon, clickToAdd, isAdding}) {
+export default function PokeCards({pokemon, clickToAdd}) {
     // const addButton = document.querySelectorAll('.addButton'); //grabs all buttons NodeList
     // addButton.forEach((button) => {
     //     button.addEventListener('click', (e) => {
