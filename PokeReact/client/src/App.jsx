@@ -1,19 +1,26 @@
 import './App.css'
-import React from 'react'
-import Dates from './components/Date'
-import PokemonList from './components/PokemonList'
-import SearchBar from './components/SearchBar'
+import Home from './components/Home'
+import { BrowserRouter ,Routes, Route } from 'react-router-dom';
+import Pokedex from './components/Pokedex';
+
+
 
 function App() {
 
   return (
     <>
-      <Dates/>
-      
-      <SearchBar/>
+   <BrowserRouter>
+    <Routes>
 
-      <PokemonList/>
- 
+
+      <Route path="/" element={<Home/>}/>
+      <Route path="/pokedex" element={<Pokedex/>}/>
+
+
+
+    </Routes>
+   </BrowserRouter>
+     
     </>
   )
 }

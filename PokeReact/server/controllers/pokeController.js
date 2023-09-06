@@ -16,7 +16,6 @@ export const getPokemon = async (req, res) =>{
 //@desc set goals
 //@route POST /api/pokemon
 export const addPokemon =  async (req, res) =>{
-    console.log(req.body)
     
    
 
