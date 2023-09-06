@@ -36,14 +36,15 @@ export default function PokemonList() {
 
   const addPokemonToPokedex = async (pokemon) => {
     try {
-      const response = await fetch('/api/pokemon', {
+      const response = await fetch('http://localhost:3000/api/add-pokemon', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(pokemonData), // Send the correct data here
+        body: JSON.stringify(pokemon), // Send the correct data here
       });
   
+
       if (response.ok) {
         const addedPokemon = await response.json();
         console.log('Added Pokemon:', addedPokemon);
