@@ -1,0 +1,32 @@
+{
+  "hash": "ff59132d",
+  "browserHash": "a1ad3a65",
+  "optimized": {
+    "react": {
+      "src": "../../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "93e89f50",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "c4b801b5",
+      "needsInterop": true
+    },
+    "react-query": {
+      "src": "../../../node_modules/react-query/es/index.js",
+      "file": "react-query.js",
+      "fileHash": "eaf31077",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-VU2AWMSI": {
+      "file": "chunk-VU2AWMSI.js"
+    },
+    "chunk-LRRF7FDU": {
+      "file": "chunk-LRRF7FDU.js"
+    }
+  }
+}

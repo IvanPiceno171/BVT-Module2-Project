@@ -32,7 +32,6 @@ export default function PokeCards({pokemon, clickToAdd}) {
         <p className="card-subtitle">Type: {pokemon.types.map((type) => type.type.name).join(', ')}</p>
         <p className="card-subtitle">Abilities: {pokemon.abilities.map((ability) => ability.ability.name).join(', ')}</p>
         <button className="addButton" onClick={()=>clickToAdd(pokemon)}>
-        {/* <button className="addButton"  onClick={addToPokedex}> */}
           Add to Pokedex
         </button>
         </li>
