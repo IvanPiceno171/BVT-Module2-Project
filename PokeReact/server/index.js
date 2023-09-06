@@ -1,10 +1,7 @@
-// const express = require('express')
 import express from 'express'
 import dotenv from "dotenv";
 import cors from "cors";
 import db from './config/db.js'
-// import  PokemonModel  from "./schemas/pokemon.schema.js";
-// import { UserModel } from "./schemas/user.schema.js";
 
 import router from './routes/pokemonRoutes.js'
 
@@ -20,7 +17,6 @@ const corOptions = {
     credentials: true,
     optionSuccessStatus:200
 }
-
 
 
 const app = express()
