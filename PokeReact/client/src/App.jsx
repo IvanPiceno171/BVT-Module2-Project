@@ -4,6 +4,7 @@ import { BrowserRouter ,Routes, Route } from 'react-router-dom';
 import Pokedex from './components/Pokedex';
 
 
+
 function App() {
 
   return (
@@ -19,6 +20,7 @@ function App() {
 
     </Routes>
    </BrowserRouter>
+     
     </>
   )
 }
