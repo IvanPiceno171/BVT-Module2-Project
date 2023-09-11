@@ -6,6 +6,7 @@ import PokemonModel from '../schemas/pokemon.schema.js'
 //@desc GET pokemon
 //@route GET /api/pokemon
 export const getPokemon = async (req, res) =>{
+    console.log(req.body)
     const pokemon = await PokemonModel.find()
 
     res.status(200).json({pokemon})

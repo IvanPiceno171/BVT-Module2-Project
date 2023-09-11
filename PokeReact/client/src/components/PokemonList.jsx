@@ -39,7 +39,7 @@ export default function PokemonList() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(pokemon), // Send the correct data here
+        body: JSON.stringify(pokemon), // Send the correct data 
       });
   
 
