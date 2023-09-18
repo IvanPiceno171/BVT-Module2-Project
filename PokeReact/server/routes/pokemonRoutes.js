@@ -1,9 +1,11 @@
 // const express = require('express')
 import express from 'express'
 const router = express.Router()
-import {  addPokemon,getPokemon } from '../controllers/pokeController.js'
+import {  addPokemon,getPokemon, getPokemonByType } from '../controllers/pokeController.js'
 
 router.get('/', getPokemon)
+
+router.get('/type', getPokemonByType)
 
 router.post('/', addPokemon)
 

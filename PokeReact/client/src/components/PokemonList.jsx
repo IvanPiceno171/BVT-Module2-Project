@@ -13,9 +13,11 @@ export default function PokemonList() {
       id: data.id,
       image: data.sprites.front_default,
       abilities: data.abilities,
-      types: data.types,
+      // types: data.types,
+      types: data.types.map((typeObj) => typeObj.type.name),
     };
 
+    // console.log(pokemon)
     return pokemon;
   };
 
