@@ -14,9 +14,6 @@ export const getPokemon = async (req, res) =>{
 //@ GET filter by types
 //@route GET /api/pokemon/type
 export const getPokemonByType = async (req, res) =>{
-    // const pokemon = await PokemonModel.find({types: req.body})
-    // res.status(200).json({pokemon})
-
     const type = req.query.type; // Get the type from the query parameter
     const pokemon = await PokemonModel.find({ 'types': type }); // Filter by type
     res.status(200).json({ pokemon });
@@ -29,5 +26,3 @@ export const addPokemon =  async (req, res) =>{
     const pokemon = await PokemonModel.create( req.body)
     res.status(200).json(pokemon)
 }
-
-// module.exports = {addPokemon, getPokemon}
