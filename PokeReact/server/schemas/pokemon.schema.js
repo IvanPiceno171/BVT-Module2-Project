@@ -26,20 +26,7 @@ const pokemonSchema = new mongoose.Schema({
     },
   ],
   types: [
-    {
-      slot: Number,
-      type: {
-        name: String, // Assuming the type name is a string
-        // You can add more properties here if needed
-      },
-    },
-    {
-      slot: Number,
-      type: {
-        name: String,
-        // You can add more properties here if needed
-      },
-    },
+    String,
   ],
 });
 
